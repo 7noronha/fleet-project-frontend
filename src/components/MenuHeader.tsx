@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Avatar, Button, HStack, IconButton, Text, VStack } from "@inovaetech/components-react";
 import { useTheme } from "@inovaetech/components-react/theme";
+import { useNavigate } from "react-router-dom";
 
 export function MenuHeader() {
     const { isDark, changeTheme } = useTheme();
@@ -9,6 +10,7 @@ export function MenuHeader() {
     const [isSubMenuManutencaoOpen, setSubMenuManutencaoOpen] = useState(false);
     const [isSubMenuDocumentacaoOpen, setSubMenuDocumentacaoOpen] = useState(false);
     const [isSubMenuOcorrenciaOpen, setSubMenuOcorrenciaOpen] = useState(false);
+    const navigate = useNavigate();
 
     const handleMouseEnterVeiculo = () => {
         setSubMenuVeiculosOpen(true);
@@ -58,7 +60,7 @@ export function MenuHeader() {
     };
 
     return (
-        <HStack bg="background" className="justify-between w-full font-bold items-center">
+        <HStack bg="background" className="justify-between w-full font-bold items-center p-1">
             <Avatar initials={"EX"} isOutline src="./user.png" />
             <Text className="font-bold">Olá, Usuario teste</Text>
             <VStack onMouseEnter={handleMouseEnterVeiculo} onMouseLeave={handleMouseLeaveVeiculo}>
@@ -67,34 +69,34 @@ export function MenuHeader() {
                 </Button>
                 {isSubMenuVeiculosOpen && (
                     <VStack className="flex flex-col items-center relative">
-                        <Button
+                        {/* <Button
                             color={isDark ? "default" : "primary"}
-                            className="w-40 text-white px-4 py-2 absolute top-[5px]"
+                            className="w-40 text-white px-4 py-2 absolute"
                             onPress={() => handleSubMenuVeioulosClick("Consulta")}
                         >
                             Consulta
-                        </Button>
+                        </Button> */}
                         <Button
                             color={isDark ? "default" : "primary"}
-                            className="w-40 text-white px-4 py-2 absolute top-[50px]"
-                            onPress={() => handleSubMenuVeioulosClick("Adicionar")}
+                            className="w-40 text-white px-4 py-2 absolute"
+                            onPress={() => navigate("/adicionarveiculo")}
                         >
                             Adicionar
                         </Button>
-                        <Button
+                        {/* <Button
                             color={isDark ? "default" : "primary"}
-                            className="w-40 text-white px-4 py-2 absolute top-[95px]"
+                            className="w-40 text-white px-4 py-2 absolute"
                             onPress={() => handleSubMenuVeioulosClick("Alterar")}
                         >
                             Alterar
                         </Button>
                         <Button
                             color={isDark ? "default" : "primary"}
-                            className="w-40 text-white px-4 py-2 absolute top-[140px]"
+                            className="w-40 text-white px-4 py-2 absolute"
                             onPress={() => handleSubMenuVeioulosClick("Excluir")}
                         >
                             Excluir
-                        </Button>
+                        </Button> */}
                     </VStack>
                 )}
             </VStack>
@@ -213,7 +215,7 @@ export function MenuHeader() {
                     </VStack>
                 )}
             </VStack>
-            <VStack onMouseEnter={handleMouseEnterOcorrencia}>
+            <VStack onMouseEnter={handleMouseEnterOcorrencia} onMouseLeave={handleMouseLeaveOcorrencia}>
                 <Button
                     leftIcon="PiSealWarningFill"
                     className="w-40  text-white"

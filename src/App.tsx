@@ -4,7 +4,7 @@ import { Login } from "./views/login/Login";
 import { Menu } from "./views/menu/Menu";
 import { CriarManutencao } from "./views/manutencao/CriarManutencao";
 import { CriarServico } from "./views/servico/CriarServico";
-import { CriarVeiculo } from "./views/veiculo/CriarVeiculo";
+import { CriarVeiculo } from "./views/veiculo/AdicionarVeiculo";
 import "./App.css";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
             <Route path="/menu" element={<Menu />} />
             <Route path="/criarManutencao" element={<CriarManutencao />} />
             <Route path="/criarServico" element={<CriarServico />} />
-            <Route path="/criarVeiculo" element={<CriarVeiculo />} />
+            <Route path="/adicionarVeiculo" element={<CriarVeiculo />} />
         </Routes>
     );
 }

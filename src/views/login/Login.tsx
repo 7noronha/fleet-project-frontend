@@ -47,11 +47,11 @@ export function Login() {
 
     return (
         <HStack bg="background" justifyContent="center" alignItems="center" className="w-full h-full">
-            <HStack justifyContent="center" alignItems="center" className="h-full w-2/3 ">
+            <HStack justifyContent="center" alignItems="center" bg="background" className="h-full w-2/3 ">
                 <Image src="./frota2.png" width={700} height={700} />
             </HStack>
 
-            <HStack className="h-full w-1/3 " justifyContent="center" bg="background">
+            <HStack justifyContent="center" alignItems="center" bg="background" className="h-full w-1/3">
                 <VStack className="justify-center" alignItems="center">
                     <Card
                         className="justify-center w-[80%] h-[70%] items-center border-hidden"
